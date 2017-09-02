@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.versalite.assettracking.WhitenyBooksFont
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="Generate Report"
+        android:layout_marginTop="12dp"
+        android:id="@+id/rep_text"
+        android:layout_marginLeft="12dp"
+        android:textColor="@color/material_black"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/rep_first"
+        android:background="@drawable/button_border"
+        android:layout_marginTop="12dp"
+        style="@style/margin"
+        android:layout_below="@+id/rep_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Spinner
+        android:id="@+id/rep_second"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/button_border"
+        style="@style/margin"
+        android:layout_below="@+id/rep_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="match_parent"
+
+        style="@style/margin"
+        android:background="@drawable/button_rounded_red"
+        android:id="@+id/rep_gen_butt"
+        android:text="Generate"
+        android:layout_marginBottom="60dp"
+        android:textColor="@color/material_white"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
