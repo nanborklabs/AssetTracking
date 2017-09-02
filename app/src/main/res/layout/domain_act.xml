@@ -27,7 +27,6 @@
         style="@style/margin"
         android:background="@drawable/rounded_corners"
         android:textColor="@color/material_white"
-
         android:id="@+id/button_add_asset"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button_scan"
@@ -39,6 +38,8 @@
            android:layout_width="match_parent"
            android:text="Scan Asset/QR"
            style="@style/margin"
+
+
            android:id="@+id/button_scan"
            android:layout_marginTop="12dp"
            android:background="@drawable/rounded_corners"
