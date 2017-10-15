@@ -54,7 +54,7 @@
         android:layout_marginTop="40dp"
         android:text="Create User"
         android:layout_height="wrap_content"
-        android:id="@+id/user_sign_up"
+        android:id="@+id/sign_btton"
         android:textAllCaps="false"
         />
 

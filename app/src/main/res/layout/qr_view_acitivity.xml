@@ -1,69 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:clipChildren="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
 
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_centerHorizontal="true"
-        android:layout_weight="1.4"
-        android:id="@+id/qr_view"
-        android:layout_marginTop="18dp"
-        android:layout_height="250dp">
-
-    </ImageView>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/qr_view"
-        android:layout_marginTop="34dp"
-        android:text="TextView"
-        android:layout_alignRight="@+id/qr_view"
-        android:layout_alignEnd="@+id/qr_view"
-        android:layout_alignLeft="@+id/qr_view"
-        android:layout_alignStart="@+id/qr_view" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:text="TextView"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="17dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="17dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView5"
-        android:layout_alignRight="@+id/textView5"
-        android:layout_below="@+id/textView5"
-        android:layout_marginTop="17dp"
-        android:text="TextView" />
+        android:clipChildren="true"
+        android:layout_height="wrap_content">
 
 
-</RelativeLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:text="Download"
+            style="@style/login_button"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/send_mail"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="300dp"
+            android:background="@color/material_white"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/asset_root_qr"
+            android:layout_height="490dp">
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_gravity="center"
+
+                    android:id="@+id/qr_view"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_height="200dp">
+
+                </ImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+
+                android:layout_height="wrap_content">
+                <!--Asset Id-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="wrap_content"
+                        android:text="Asset Id"
+                        android:textSize="20sp"
+                        android:textColor="#36353F"
+                        android:gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_height="match_parent" />
+                    <com.versalite.assettracking.OpenSansTextView
+                        android:layout_width="wrap_content"
+                        android:text="ABC_BANG_ICN_012022454"
+                        android:gravity="center"
+                        android:id="@+id/asset_id"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="12dp"
+                        android:textColor="@color/material_black"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+                <!--Asset Name-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="wrap_content"
+                        android:text="Asset Name"
+                        android:textSize="20sp"
+                        android:textColor="#36353F"
+                        android:gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_height="match_parent" />
+                    <com.versalite.assettracking.OpenSansTextView
+                        android:layout_width="wrap_content"
+                        android:text="Table"
+                        android:id="@+id/assetName"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="12dp"
+                        android:textColor="@color/material_black"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+
+                <!--Asset Type-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="wrap_content"
+                        android:text="Asset Type"
+                        android:textSize="20sp"
+                        android:textColor="#36353F"
+                        android:gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_height="match_parent" />
+                    <com.versalite.assettracking.OpenSansTextView
+                        android:layout_width="wrap_content"
+                        android:text="Captital"
+                        android:id="@+id/type"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="12dp"
+                        android:textColor="@color/material_black"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+
+                <!--Organisation Name -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:gravity="center"
+                        android:text="Organisation Name"
+                        android:textColor="#36353F"
+                        android:textSize="20sp" />
+
+                    <com.versalite.assettracking.OpenSansTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:id="@+id/org_name"
+                        android:gravity="center"
+                        android:text="ABC Company"
+                        android:textColor="@color/material_black" />
+                </RelativeLayout>
+                <!--Location-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="wrap_content"
+                        android:text="Location"
+                        android:textSize="20sp"
+                        android:textColor="#36353F"
+                        android:gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_height="match_parent" />
+                    <com.versalite.assettracking.OpenSansTextView
+                        android:layout_width="wrap_content"
+                        android:text="Bangalore"
+                        android:gravity="center"
+                        android:id="@+id/location_text"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="12dp"
+                        android:textColor="@color/material_black"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+                <!--DepartMent-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:gravity="center"
+                        android:text="Dept"
+                        android:textColor="#36353F"
+                        android:textSize="20sp" />
+                    <com.versalite.assettracking.OpenSansTextView
+                        android:layout_width="wrap_content"
+                        android:text="IT "
+                        android:id="@+id/deptname"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="12dp"
+                        android:textColor="@color/material_black"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+                <!--Room-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_height="40dp">
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="wrap_content"
+                        android:text="Domain/Room"
+                        android:textSize="20sp"
+                        android:textColor="#36353F"
+                        android:gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_height="match_parent" />
+                    <com.versalite.assettracking.OpenSansTextView
+                        android:layout_width="wrap_content"
+                        android:text="Conference Room"
+                        android:gravity="center"
+                        android:id="@+id/room_name"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="12dp"
+                        android:textColor="@color/material_black"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

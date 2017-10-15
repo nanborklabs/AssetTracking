@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimary"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+
+
+    <com.versalite.assettracking.OpenSansTextView
+        android:layout_width="match_parent"
+        android:alpha="0"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:id="@+id/sp_title"
+        android:textColor="@color/material_white"
+        android:text="Asset Tracker"
+        android:layout_height="wrap_content" />
+    <com.versalite.assettracking.WhitenyBooksFont
+        android:layout_width="match_parent"
+        android:layout_below="@+id/sp_title"
+        android:text="New Generation Auditing"
+        android:gravity="center"
+        android:alpha="0"
+        android:id="@+id/sp_sub"
+        android:textColor="@color/material_white"
+        android:textSize="20sp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_height="wrap_content" />
+
+
+    <com.versalite.assettracking.WhitenyBooksFont
+        android:layout_width="match_parent"
+        android:layout_marginBottom="70dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:alpha="0"
+        android:id="@+id/sp_bottom"
+        android:textColor="@color/material_black"
+        android:text="Versalite Technologies Pvt Ltd."
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

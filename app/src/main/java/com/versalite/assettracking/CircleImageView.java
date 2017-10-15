@@ -1,4 +1,4 @@
-package com.bookaholicc.bookaholic;
+package com.versalite.assettracking;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -21,7 +21,7 @@ import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.bookaholicc.R;
+
 
 /**
  * Created by nandhu on 18/7/17.

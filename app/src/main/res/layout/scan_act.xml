@@ -1,51 +1,88 @@
-<RelativeLayout
 
-    android:layout_height="match_parent"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-        <com.journeyapps.barcodescanner.DecoratedBarcodeView android:id="@+id/barcode_scanner"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_above="@+id/buttonsLayout"
-        android:layout_alignParentTop="true"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    tools:context="com.versalite.assettracking.MainActivity">
 
-        </com.journeyapps.barcodescanner.DecoratedBarcodeView>
-
-        <LinearLayout
-        android:orientation="vertical"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/buttonsLayout"
-        android:layout_toLeftOf="@+id/centerHorizont">
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-            <Button
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/cam_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pause"
-            android:onClick="pause" />
+            app:theme="@style/CustomActionBar"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-            <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Resume"
-            android:onClick="resume" />
-        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
 
-        <View
-        android:layout_width="0dp"
+
+
+
+
+
+    <RelativeLayout
+
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/centerHorizont" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+            <com.journeyapps.barcodescanner.DecoratedBarcodeView android:id="@+id/barcode_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/buttonsLayout"
+            android:layout_alignParentTop="true"
+            xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/centerHorizont"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/buttonsLayout"
-        android:id="@+id/barcodePreview" />
+            </com.journeyapps.barcodescanner.DecoratedBarcodeView>
 
-</RelativeLayout>
+            <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/buttonsLayout"
+            android:layout_toLeftOf="@+id/centerHorizont">
+
+                <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                android:text="Pause"
+                android:onClick="pause" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey400"/>
+
+                <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                android:text="Resume"
+                android:onClick="resume" />
+            </LinearLayout>
+
+            <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/centerHorizont" />
+
+            <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/centerHorizont"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/buttonsLayout"
+            android:id="@+id/barcodePreview" />
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

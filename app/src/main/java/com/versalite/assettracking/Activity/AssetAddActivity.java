@@ -28,6 +28,7 @@ import butterknife.ButterKnife;
 
 /**
  * Created by nandhu on 24/8/17.
+ *
  */
 
 public class AssetAddActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemSelectedListener, Response.ErrorListener, Response.Listener<JSONObject> {
@@ -82,7 +83,6 @@ public class AssetAddActivity extends AppCompatActivity implements AdapterView.O
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mSpinner.setAdapter(adapter);
-        mSpinner.setOnItemClickListener(this);
         mSpinner.setOnItemSelectedListener(this);
 
         // Description Spinner
@@ -115,8 +115,8 @@ public class AssetAddActivity extends AppCompatActivity implements AdapterView.O
             mJsonObject.put("location",location);
             mJsonObject.put("deptName",deptName);
             mJsonObject.put("type",assetType);
-            mJsonObject.put("assetType",assetDescription);
-            mJsonObject.put("roomName",roomNo);
+            mJsonObject.put("description",assetDescription);
+            mJsonObject.put("roomNo",roomNo);
             JsonObjectRequest mRequest = new JsonObjectRequest(1,saveAssetURL,mJsonObject,this,this);
             AppRequestQueue mAppRequestQueue = AppRequestQueue.getInstance(this);
             mAppRequestQueue.addToRequestQue(mRequest);
@@ -154,16 +154,16 @@ public class AssetAddActivity extends AppCompatActivity implements AdapterView.O
         try {
             if (response.getInt("status") == 1 ){
 
-                long id = response.getLong("id");
+                long id = response.getLong("assetId");
                 String QRcode = encodingURL + "?id="+id;
                 Intent i = new Intent(this,QRViewActivity.class);
                 i.putExtra("qr",QRcode);
-                i.putExtra("id",id);
-                i.putExtra("name",response.getString("name"));
-                i.putExtra("orgname",response.getString("orgName"));
+                i.putExtra("assetId",id);
+                i.putExtra("name",response.getString("assetName"));
+                i.putExtra("orgName",response.getString("orgName"));
                 i.putExtra("location",response.getString("location"));
                 i.putExtra("deptName",response.getString("deptName"));
-                i.putExtra("roomName",response.getString("roomName"));
+                i.putExtra("roomNo",response.getString("roomNo"));
                 i.putExtra("type",response.getString("type"));
                 i.putExtra("description",response.getString("description"));
 

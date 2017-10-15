@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+        <!--Title-->
+        <com.versalite.assettracking.OpenSansTextView
+            android:layout_width="wrap_content"
+            android:text="Add New Asset"
+            android:textColor="@color/material_black"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/add_ass_title"
+
+            android:layout_height="wrap_content" />
+        <com.versalite.assettracking.WhitenyBooksFont
+            android:layout_width="wrap_content"
+            android:id="@+id/ass_titl_sub"
+            android:text="Please Fill in the Fields to Add assets"
+            android:textColor="@color/material_black"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+
+           android:layout_below="@+id/add_ass_title"
+            android:layout_height="wrap_content" />
 
 
     <!--Asset Name-->
@@ -15,6 +40,7 @@
         android:layout_marginLeft="12dp"
         android:layout_marginTop="12dp"
         android:id="@+id/asset_name"
+        android:layout_below="@+id/ass_titl_sub"
         android:layout_marginRight="12dp"
         android:layout_height="wrap_content">
 
@@ -32,6 +58,7 @@
         android:text="Select Asset Type"
         android:layout_marginLeft="12dp"
         style="@style/margin"
+        android:textColor="@color/material_grey900"
         android:layout_height="wrap_content"
         android:id="@+id/asset_tpe"
         android:layout_below="@+id/asset_name"
@@ -54,6 +81,7 @@
         android:text="Asset Description"
         android:layout_marginLeft="12dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/material_grey900"
         android:id="@+id/asse_desc_text"
         android:layout_below="@+id/asset_type_spinner"
         android:layout_alignParentLeft="true"
@@ -64,6 +92,8 @@
         android:id="@+id/asset_desc"
         android:layout_marginTop="4dp"
         style="@style/margin"
+        android:hint="Some Description About the Asset"
+        android:textSize="12sp"
         android:minLines="3"
         android:layout_below="@+id/asse_desc_text"
         android:layout_width="match_parent"
@@ -74,6 +104,7 @@
         android:layout_marginLeft="12dp"
         android:layout_height="wrap_content"
         style="@style/margin"
+        android:textColor="@color/material_grey900"
         android:id="@+id/asset_tag"
         android:layout_below="@+id/asset_desc"
         android:layout_alignParentLeft="true"
@@ -101,8 +132,9 @@
             android:layout_height="40dp">
             <com.versalite.assettracking.WhitenyBooksFont
                 android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:gravity="center"
+
+
+                style="@style/tagging"
                 android:text="Organisation"
 
                 android:layout_height="match_parent" />
@@ -112,7 +144,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1.4"
-
+                android:textSize="14sp"
                 android:hint="Organisation Name" />
 
 
@@ -128,8 +160,7 @@
             android:layout_height="40dp">
             <com.versalite.assettracking.WhitenyBooksFont
                 android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:gravity="center"
+                style="@style/tagging"
                 android:text="Location"
 
                 android:layout_height="match_parent" />
@@ -137,6 +168,7 @@
             <EditText
                 android:id="@+id/l_ed"
                 android:layout_weight="1.4"
+                android:textSize="14sp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
 
@@ -155,8 +187,7 @@
             android:layout_height="40dp">
             <com.versalite.assettracking.WhitenyBooksFont
                 android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:gravity="center"
+                style="@style/tagging"
                 android:text="Department"
 
                 android:layout_height="match_parent" />
@@ -164,6 +195,7 @@
 
             <EditText
                 android:id="@+id/d_ed"
+                android:textSize="14sp"
                 android:layout_weight="1.4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -183,8 +215,7 @@
             android:layout_height="40dp">
             <com.versalite.assettracking.WhitenyBooksFont
                 android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:gravity="center"
+                style="@style/tagging"
                 android:text="Room"
 
                 android:layout_height="match_parent" />
@@ -194,6 +225,7 @@
                 android:id="@+id/r_ed"
                 android:layout_weight="1.4"
                 android:layout_width="0dp"
+                android:textSize="14sp"
                 android:layout_height="match_parent"
 
                 android:hint="Room Name" />
@@ -209,11 +241,12 @@
         android:layout_width="match_parent"
         android:text="Save"
 
+        android:layout_marginBottom="60dp"
         style="@style/margin"
         android:layout_below="@+id/ll"
         android:background="@drawable/rounded_corners"
         android:id="@+id/save_button"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content" />
 
 
@@ -221,5 +254,5 @@
 
 
 
-</RelativeLayout>
+    </RelativeLayout>
 </ScrollView>

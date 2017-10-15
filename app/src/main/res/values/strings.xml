@@ -5,8 +5,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="open_drawer">open Drawer</string>
+    <string name="close_drawer">close Drawer</string>
+    <string name="email">Email Address</string>
+    <string name="pass">Password</string>
+    <string name="camer_text"><![CDATA[Place the Camera at QR ,The App will automatically scan & record based on chosen location]]></string>
 
-        <string-array name="asset_type">
+    <string-array name="asset_type">
             <item>Capital</item>
             <item>Non Capital</item>
             <item>Add New</item>

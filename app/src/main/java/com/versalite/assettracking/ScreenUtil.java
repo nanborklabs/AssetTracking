@@ -1,4 +1,4 @@
-package com.bookaholic.userApp.utils;
+package com.versalite.assettracking;
 
 import android.content.Context;
 import android.content.res.Resources;

@@ -1,51 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.versalite.assettracking.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="16dp"
+
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/dom_toolbar"
+            android:layout_width="match_parent"
+
+            android:elevation="16dp"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
 <RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <TextView
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:id="@+id/title_text"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="TATA-Bangalore1-Cunningham Road- HR dept Room 223"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:layout_height="wrap_content" />
+        android:layout_height="160dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:id="@+id/cardView">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.versalite.assettracking.OpenSansTextView
+                android:layout_width="wrap_content"
+                android:text="Versalite Pvt Ltd"
+                android:gravity="center"
+                android:id="@+id/domain_org_name"
+                android:textColor="@color/material_black"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:textSize="22sp"
+                android:layout_height="wrap_content" />
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:layout_width="wrap_content"
+                android:text="Location"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/domain_org_name"
+                android:layout_alignLeft="@+id/domain_org_name"
+                android:layout_alignStart="@+id/domain_org_name"
+                android:layout_marginTop="11dp"
+                android:id="@+id/dom_loc_text" />
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:layout_width="wrap_content"
+                android:text="Bangalore"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/dom_loc_text"
+                android:layout_alignBottom="@+id/dom_loc_text"
+                android:layout_alignRight="@+id/domain_org_name"
+                android:layout_alignEnd="@+id/domain_org_name"
+                android:id="@+id/dom_loc_val" />
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:layout_width="wrap_content"
+                android:text="Department:"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dom_loc_text"
+                android:layout_alignLeft="@+id/dom_loc_text"
+                android:layout_alignStart="@+id/dom_loc_text"
+                android:id="@+id/whitenyBooksFont2" />
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:layout_width="wrap_content"
+                android:text="Kitchen"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dom_loc_val"
+                android:layout_alignLeft="@+id/dom_loc_val"
+                android:layout_alignStart="@+id/dom_loc_val"
+                android:id="@+id/dom_dept_val">
 
+            </com.versalite.assettracking.WhitenyBooksFont>
 
-    <Button
-        android:layout_width="match_parent"
-        android:text="Add New Asset"
-        style="@style/margin"
-        android:background="@drawable/rounded_corners"
-        android:textColor="@color/material_white"
-        android:id="@+id/button_add_asset"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_scan"
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:layout_width="wrap_content"
+                android:text="User:"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/whitenyBooksFont2"
+                android:layout_alignLeft="@+id/whitenyBooksFont2"
+                android:layout_alignStart="@+id/whitenyBooksFont2">
 
-        />
+            </com.versalite.assettracking.WhitenyBooksFont>
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:layout_width="wrap_content"
+                android:text="Nandha Kumar"
+                android:id="@+id/dom_user_val"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dom_dept_val"
+                android:layout_alignLeft="@+id/dom_dept_val"
+                android:layout_alignStart="@+id/dom_dept_val" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
 
     <Button
            android:layout_width="match_parent"
            android:text="Scan Asset/QR"
            style="@style/margin"
-
-
            android:id="@+id/button_scan"
            android:layout_marginTop="12dp"
            android:background="@drawable/rounded_corners"
-           android:textColor="@color/material_white"
+           android:textColor="@color/material_black"
            android:layout_centerHorizontal="true"
            android:layout_centerInParent="true"
            android:layout_height="wrap_content" />
 
+
+    <com.versalite.assettracking.WhitenyBooksFont
+        android:layout_width="wrap_content"
+        android:text="Need Help?"
+        android:textColor="@color/material_black"
+        android:textSize="20sp"
+
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dom_need_help" />
+
+
 </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

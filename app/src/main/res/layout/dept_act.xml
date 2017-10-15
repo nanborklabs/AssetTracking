@@ -1,104 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.versalite.assettracking.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="16dp"
+
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/dept_toolbar"
+            android:layout_width="match_parent"
+
+            android:elevation="16dp"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
 <RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
+    android:background="@color/colorPrimary"
+    android:clipChildren="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-    <TextView
+    <com.versalite.assettracking.OpenSansTextView
         android:layout_width="match_parent"
-        android:id="@+id/title_text"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Select Department"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="Location"
+        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:textStyle="bold"
+        android:textColor="@color/material_white"
+        android:id="@+id/dept_text"
         android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Bangalore Koramganala"
         android:layout_height="wrap_content"
-        android:id="@+id/dept_ll"
-        android:layout_below="@+id/title_text"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
-        <android.support.v7.widget.CardView
+        android:layout_marginTop="5dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/material_white"
+        android:textSize="22sp"
+        android:id="@+id/dept_loca_val"
+        android:layout_below="@+id/dept_text"
+        android:layout_alignLeft="@+id/dept_text"
+        android:layout_alignStart="@+id/dept_text" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/dept_loca_div"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/material_grey100"
+        android:layout_below="@+id/dept_loca_val"
+        android:layout_alignLeft="@+id/dept_loca_val"
+        android:layout_alignStart="@+id/dept_loca_val" />
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        app:cardUseCompatPadding="true"
+        android:layout_marginLeft="12dp"
+        android:clipChildren="true"
+        android:layout_marginRight="12dp"
+        android:layout_below="@+id/dept_loca_div"
+        android:layout_height="match_parent">
+        <RelativeLayout
             android:layout_width="match_parent"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="8dp"
-            android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="match_parent"
-            android:text="Asia HR"
-            style="@style/text_incard"
-            android:layout_height="wrap_content" />
+            android:clipChildren="true"
+            android:layout_height="match_parent">
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:layout_width="wrap_content"
+                android:text="Choose Department"
+                android:layout_marginTop="6dp"
+                android:textSize="22sp"
+                android:layout_marginLeft="6dp"
+                android:textColor="@color/material_black"
+                android:id="@+id/cho_loc_text"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:id="@+id/loc_div"
+                android:background="@color/material_grey500"
+                android:layout_below="@id/cho_loc_text"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"/>
+
+            <!--Start Of Locations-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/loc_div"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <com.versalite.assettracking.WhitenyBooksFont
+                    android:layout_width="match_parent"
+                    android:text="IT - Devlopment"
+                    android:id="@+id/dt_1"
+                    style="@style/text_incard"
+                    android:layout_height="40dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/material_grey500"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"/>
+                <com.versalite.assettracking.WhitenyBooksFont
+                    android:layout_width="match_parent"
+                    android:text="IT - Security"
+                    style="@style/text_incard"
+                    android:id="@+id/dt_2"
+                    android:layout_height="40dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/material_grey500"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"/>
+                <com.versalite.assettracking.WhitenyBooksFont
+                    android:layout_width="match_parent"
+                    android:text="Warehouse"
+                    android:id="@+id/dt_3"
+                    style="@style/text_incard"
+                    android:layout_height="40dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/material_grey500"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"/>
+                <com.versalite.assettracking.WhitenyBooksFont
+                    android:layout_width="match_parent"
+                    android:text="Cafeteria"
+                    android:id="@+id/dt_4"
+                    style="@style/text_incard"
+                    android:layout_height="40dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/material_grey500"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/material_grey500"/>
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="8dp"
-            android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="match_parent"
-            android:text="India HR"
-            style="@style/text_incard"
-            android:layout_height="wrap_content" />
-</android.support.v7.widget.CardView>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/material_grey500"/>
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="8dp"
-            android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="match_parent"
-            android:text="Regional HR"
-            style="@style/text_incard"
-            android:layout_height="wrap_content" />
-    </android.support.v7.widget.CardView>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/material_grey500"/>
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="8dp"
-            android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="match_parent"
-            android:text="Bangalore 1 HR"
-            style="@style/text_incard"
-            android:layout_height="wrap_content" />
-    </android.support.v7.widget.CardView>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/material_grey500"/>
-
-
-    </LinearLayout>
-
-
 
 </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

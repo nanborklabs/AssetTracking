@@ -1,153 +1,454 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimary"
+    android:clipChildren="true"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.versalite.assettracking.OpenSansTextView
+
+    <!--Status Card-->
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="JCB Crane 1.5 Ton"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        android:textColor="@color/material_black"
-        android:layout_marginTop="20dp"
-        android:id="@+id/ad_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        android:id="@+id/status_card"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="2dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-    <LinearLayout
+            <TextView
+                android:id="@+id/scan_status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:text="Scan Successfull"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                app:srcCompat="@drawable/ic_check_black_24dp"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/status_image"
+                android:layout_below="@+id/scan_status_text"
+                android:layout_centerHorizontal="true" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/statu_div"
+                android:background="@color/cardview_dark_background"
+                android:layout_below="@+id/status_image"/>
+
+
+
+
+            <ImageView
+                android:id="@+id/scan_next"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/ic_chevron_right_black_24dp"
+                android:layout_below="@+id/scan_status_text"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_alignBottom="@+id/status_image" />
+
+            <ImageView
+                android:id="@+id/close_audit"
+                android:layout_width="50dp"
+                android:layout_marginLeft="12dp"
+                android:padding="10dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/ic_error"
+                android:layout_below="@+id/scan_status_text"
+                android:layout_alignBottom="@+id/status_image" />
+
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <!--Details Card-->
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:id="@+id/stat_con"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/ad_name"
-        android:layout_height="60dp">
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Status"
+        android:layout_below="@id/status_card"
+        android:id="@+id/details_card"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_margin="1dp"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Details"
+                android:textColor="@color/material_black"
+                android:textSize="22sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/det_text"
+                android:layout_height="wrap_content" />
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:layout_width="wrap_content"
+                android:text="Audit Date: "
 
-            android:layout_height="match_parent" />
+                style="@style/det_left_text"
+                android:id="@+id/aud_text"
 
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="Good"
-            android:textSize="22sp"
-            android:gravity="center"
-            android:textColor="@color/material_green500"
-            android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
 
-    </LinearLayout>
+                android:layout_below="@+id/det_text"
+                />
+            <TextView
+                android:id="@+id/aduit_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17 Sept 2017"
+                android:textSize="18sp"
+                android:textColor="@color/black"
 
-<!--Organisation-->
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_alignBaseline="@+id/aud_text"
+                android:layout_alignBottom="@+id/aud_text"
+                android:layout_toRightOf="@+id/aud_text"
+                android:layout_toEndOf="@+id/aud_text" />
 
-    <LinearLayout
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:id="@+id/ad_user_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/det_left_text"
+                android:layout_below="@+id/aud_text"
+                android:text="Audit By"
+                android:layout_marginBottom="8dp"
+                 />
+
+            <TextView
+                android:id="@+id/audit_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ad_user_text"
+                android:layout_alignLeft="@+id/aduit_date"
+                android:layout_alignStart="@+id/aduit_date"
+
+                android:layout_alignTop="@+id/ad_user_text"
+                android:text="Rajesh krishan"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+    </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:id="@+id/org_layout"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/stat_con"
-        android:layout_height="40dp">
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Organisation"
+        android:layout_below="@+id/details_card"
+        android:layout_marginTop="16dp"
+        android:layout_margin="2dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
 
-            android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textColor="@color/material_black"
-            android:text="Versalite"
-            android:gravity="center"
-            android:layout_height="match_parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
 
-    </LinearLayout>
-    <!--Locations-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:id="@+id/loca_con"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/org_layout"
-        android:layout_height="40dp">
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Location"
+            android:layout_height="match_parent">
 
-            android:layout_height="match_parent" />
 
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textColor="@color/material_black"
-            android:text="Bangalore"
-            android:gravity="center"
-            android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/det_det_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="left"
+                android:text="Asset Details"
+                android:textColor="@color/material_black"
+                android:textSize="22sp"
 
-    </LinearLayout>
-    <!--Dept-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:id="@+id/dept_con"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/loca_con"
-        android:layout_height="40dp">
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Department"
+                />
 
-            android:layout_height="match_parent" />
+            <View
+                android:id="@+id/detail_div"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/det_det_text"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/material_grey500" />
 
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="Costruction"
-            android:textColor="@color/material_black"
-            android:gravity="center"
-            android:layout_height="match_parent" />
 
-    </LinearLayout>
-    <!--Room-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:textColor="@color/material_black"
-        android:weightSum="2"
-        android:id="@+id/room_cont"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/dept_con"
-        android:layout_height="40dp">
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Room"
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:id="@+id/aname"
+                style="@style/det_left_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detail_div"
 
-            android:layout_height="match_parent" />
 
-        <com.versalite.assettracking.WhitenyBooksFont
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="Warehouse"
-            android:textColor="@color/material_black"
-            android:gravity="center"
-            android:layout_height="match_parent" />
+                android:text="Asset Name" />
 
-    </LinearLayout>
+            <com.versalite.assettracking.OpenSansTextView
+                android:id="@+id/ad_name"
+                android:layout_width="match_parent"
+                style="@style/def_right_text"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/aname"
+
+                android:text="JCB Crane 1.5 Ton"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/material_black"
+                 />
+
+            <View
+                android:id="@+id/name_div"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/ad_name"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="@dimen/div_spacing_top"
+                android:background="@color/material_grey500" />
+
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:id="@+id/desc_text"
+                style="@style/det_left_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_div"
+                android:layout_marginTop="4dp"
+                android:text="Asset Description" />
+
+            <com.versalite.assettracking.OpenSansTextView
+                android:id="@+id/desc_val"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/desc_text"
+                android:layout_marginTop="2dp"
+                style="@style/def_right_text"
+                android:minLines="3"
+                android:text="this is a long description and it will take will take atleast 3 lines to write but what we have is here  "
+                android:textColor="@color/material_black"
+               />
+
+            <View
+                android:id="@+id/desc_div"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/desc_val"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="@dimen/div_spacing_top"
+                android:background="@color/material_grey500" />
+
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:id="@+id/det_typetext"
+                style="@style/det_left_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/desc_div"
+                android:text="Asset Type" />
+
+            <com.versalite.assettracking.WhitenyBooksFont
+                android:id="@+id/det_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/def_right_text"
+
+                android:layout_below="@+id/det_typetext"
+                android:layout_marginTop="2dp"
+                android:text="Capital"
+                android:textColor="@color/material_black"
+                />
+
+
+            <View
+                android:id="@+id/type_div"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/det_type"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="@dimen/div_spacing_top"
+                android:background="@color/material_grey500" />
+
+
+
+
+
+
+            <!--Organisation-->
+
+            <LinearLayout
+                android:id="@+id/org_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/type_div"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <com.versalite.assettracking.WhitenyBooksFont
+                    style="@style/det_left_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="4dp"
+
+                    android:text="Organisation" />
+
+                <com.versalite.assettracking.WhitenyBooksFont
+                    android:id="@+id/detail_org_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    style="@style/def_right_text"
+
+                    android:text="Versalite"
+                    android:textColor="@color/material_black" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/org_div"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/org_layout"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="@dimen/div_spacing_top"
+                android:background="@color/material_grey500" />
+            <!--Locations-->
+            <LinearLayout
+                android:id="@+id/loca_con"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/org_div"
+
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <com.versalite.assettracking.WhitenyBooksFont
+                    style="@style/det_left_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.8"
+                    android:layout_marginTop="4dp"
+                    android:text="Location" />
+
+                <com.versalite.assettracking.WhitenyBooksFont
+                    android:id="@+id/detail_loca_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    style="@style/def_right_text"
+                    android:layout_marginBottom="8dp"
+                    android:text="Bangalore"
+                    android:textColor="@color/material_black" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/loc_div"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/loca_con"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="@dimen/div_spacing_top"
+                android:background="@color/material_grey500" />
+            <!--Dept-->
+            <LinearLayout
+                android:id="@+id/dept_con"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loca_con"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <com.versalite.assettracking.WhitenyBooksFont
+                    style="@style/det_left_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+
+                    android:text="Department" />
+
+                <com.versalite.assettracking.WhitenyBooksFont
+                    android:id="@+id/detail_dept_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    style="@style/def_right_text"
+                    android:text="Costruction"
+                    android:textColor="@color/material_black" />
+
+            </LinearLayout>
+            <View
+                android:id="@+id/dept_div"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/dept_con"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="@dimen/div_spacing_top"
+                android:background="@color/material_grey500" />
+            <!--Room-->
+            <LinearLayout
+                android:id="@+id/room_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dept_con"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:textColor="@color/material_black"
+                android:weightSum="2">
+
+                <com.versalite.assettracking.WhitenyBooksFont
+                    style="@style/det_left_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+
+                    android:text="Room" />
+
+                <com.versalite.assettracking.WhitenyBooksFont
+                    android:id="@+id/detail_room_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    style="@style/def_right_text"
+                    android:text="Warehouse"
+                    android:textColor="@color/material_black" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
 
 </RelativeLayout>
+</ScrollView>

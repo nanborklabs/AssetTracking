@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <style name="login_button">
+        <item name="android:layout_marginLeft">32dp</item>
+        <item name="android:textColor">@color/material_black</item>
+        <item name="android:layout_marginRight">32dp</item>
+
+    </style>
+</resources>

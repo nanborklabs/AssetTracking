@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="@drawable/blue_grad"
+    android:layout_height="160dp">
+    <com.versalite.assettracking.WhitenyBooksFont
+        android:layout_width="wrap_content"
+        android:text="Atrack V 1.0.1"
+        android:textColor="@color/material_white"
+        android:textSize="22sp"
+        android:id="@+id/nav_title"
+        android:layout_above="@+id/nav_sub"
 
-</LinearLayout>
+        android:layout_marginLeft="12dp"
+        android:layout_height="wrap_content" />
+    <com.versalite.assettracking.WhitenyBooksFont
+        android:layout_width="wrap_content"
+        android:text="Next Generation Audititng"
+        android:textColor="@color/material_grey300"
+        android:textSize="18sp"
+        android:id="@+id/nav_sub"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="12dp"
+        android:layout_height="wrap_content" />
+
+
+
+
+</RelativeLayout>

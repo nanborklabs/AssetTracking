@@ -2,37 +2,74 @@ package com.versalite.assettracking;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.CardView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.versalite.assettracking.Activity.AssetAddActivity;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+
+    @BindView(R.id.imageView2)
+    ImageView mProfile;
+    @BindView(R.id.user_name)
+    OpenSansTextView mName;
+    @BindView(R.id.emp_id_value)
+    TextView mEmpId;
+    @BindView(R.id.last_login_val)
+    TextView mlastlogin;
+    @BindView(R.id.profile_card)
+    CardView mProfileCard;
+    @BindView(R.id.br_1)
+    WhitenyBooksFont br1;
+    @BindView(R.id.br_2)
+    WhitenyBooksFont br2;
+    @BindView(R.id.br_3)
+    WhitenyBooksFont br3;
+    @BindView(R.id.br_4)
+    WhitenyBooksFont br4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.location_act);
+        ButterKnife.bind(this);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
+        String email = getIntent().getStringExtra("email");
+        String pass = getIntent().getStringExtra("pass");
+        mName.setText(email);
+        mEmpId.setText("11244246");
+        br1.setOnClickListener(this);
+        br2.setOnClickListener(this);
+        br3.setOnClickListener(this);
+        br4.setOnClickListener(this);
+        mProfileCard.setOnClickListener(this);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),ReportActivity.class);
-                startActivity(i);
-            }
-        });
+
+
+
+//
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getApplicationContext(),ReportActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
 //        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 //        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -55,7 +92,7 @@ public class MainActivity extends AppCompatActivity
 
     private void goToLocActivity() {
 
-        Intent i = new Intent(this,LocationActivity.class);
+        Intent i = new Intent(this, DepartMentActivity.class);
         startActivity(i);
 
     }
@@ -73,7 +110,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
         return true;
     }
 
@@ -100,6 +137,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -114,6 +152,24 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+        startActivity(new Intent(this, AssetAddActivity.class));
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+//            case R.id.br_1:
+//                goToLocActivity("");
+//                break;
+//            case R.id.br_2:
+//                break;
+//            case R.id.br_3:
+//                break;
+//            case R.id.br_4:
+//                break;
+//
+//        }
+        }
     }
 }

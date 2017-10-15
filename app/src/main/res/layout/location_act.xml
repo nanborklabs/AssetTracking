@@ -1,106 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v4.widget.DrawerLayout android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_drawer">
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.versalite.assettracking.MainActivity">
 
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/title_text"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Select Location"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/location_ll"
-        android:layout_below="@+id/title_text"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="8dp"
-            android:layout_height="wrap_content">
+        android:elevation="16dp"
 
-        <TextView
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/loc_toolbar"
             android:layout_width="match_parent"
-            android:text="Trichy"
-            style="@style/text_incard"
-            android:layout_height="wrap_content" />
-      </android.support.v7.widget.CardView>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/material_grey500"/>
+            android:elevation="16dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:clipChildren="true"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@color/colorPrimary"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <!--Profile Card-->
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             app:cardUseCompatPadding="true"
-            app:cardElevation="8dp"
+            app:cardMaxElevation="8dp"
+            app:cardCornerRadius="4dp"
+            android:clipChildren="true"
+            android:id="@+id/profile_card"
+            android:background="?selectableItemBackground"
             android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="match_parent"
-            android:text="Coimbatore"
-            style="@style/text_incard"
-            android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:clipChildren="true"
+                android:layout_height="match_parent">
+                <com.versalite.assettracking.CircleImageView
+                    android:layout_width="75dp"
+                    android:src="@mipmap/fifa"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/material_blue400"
+                    android:layout_centerVertical="true"
+                    android:layout_height="75dp"
+                    android:id="@+id/imageView2" />
+
+                <com.versalite.assettracking.OpenSansTextView
+                    android:id="@+id/user_name"
+                    android:textColor="@color/material_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rajesh Krishna"
+                    android:textSize="22sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imageView2"
+                    android:layout_toEndOf="@+id/imageView2"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp" />
+
+                <TextView
+                    android:id="@+id/emp_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/user_name"
+                    android:layout_alignStart="@+id/user_name"
+                    android:layout_below="@+id/user_name"
+                    android:text="Emp Id:" />
+
+                <TextView
+                    android:id="@+id/emp_id_value"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/material_black"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user_name"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginStart="11dp"
+                    android:layout_toEndOf="@+id/emp_id"
+                    android:layout_toRightOf="@+id/emp_id"
+                    android:text="21364886" />
+
+                <TextView
+                    android:id="@+id/lst_login_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Login:"
+                    android:layout_marginTop="6dp"
+                    android:layout_below="@+id/emp_id"
+                    android:layout_alignLeft="@+id/emp_id"
+                    android:layout_alignStart="@+id/emp_id" />
+
+                <TextView
+                    android:id="@+id/last_login_val"
+                    android:textColor="@color/material_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/lst_login_text"
+                    android:layout_alignStart="@+id/lst_login_text"
+                    android:layout_below="@+id/lst_login_text"
+                    android:text="24 Sept 2017, 4.35 PM" />
+            </RelativeLayout>
         </android.support.v7.widget.CardView>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/material_grey500"/>
+
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             app:cardUseCompatPadding="true"
-            app:cardElevation="8dp"
-            android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="match_parent"
-            android:text="Bangalore"
-            style="@style/text_incard"
-            android:layout_height="wrap_content" />
+            app:cardMaxElevation="8dp"
+            app:cardCornerRadius="4dp"
+            android:clipChildren="true"
+            android:id="@+id/loca_card"
+
+            android:layout_below="@+id/profile_card"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:clipChildren="true"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Choose Any Location"
+                    android:layout_marginTop="8dp"
+                    android:textSize="22sp"
+                    android:layout_marginLeft="12dp"
+                    android:textColor="@color/material_blue900"
+                    android:id="@+id/cho_loc_text"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/loc_div"
+                    android:background="@color/material_grey500"
+                    android:layout_below="@id/cho_loc_text"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"/>
+
+                <!--Start Of Locations-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/loc_div"
+
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="match_parent"
+                        android:text="Bangalore - Whitefield"
+                        android:id="@+id/br_1"
+                        android:background="?selectableItemBackground"
+                        style="@style/text_incard"
+                        android:layout_height="40dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/material_grey500"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"/>
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="match_parent"
+                        android:text="Bangalore - Koramangala"
+                        style="@style/text_incard"
+                        android:id="@+id/br_2"
+                        android:layout_height="40dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/material_grey500"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"/>
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="match_parent"
+                        android:text="Palo Alto - Golden Street"
+                        android:id="@+id/br_3"
+                        style="@style/text_incard"
+                        android:layout_height="40dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/material_grey500"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"/>
+                    <com.versalite.assettracking.WhitenyBooksFont
+                        android:layout_width="match_parent"
+                        android:text="NCR - Noida Road"
+                        android:id="@+id/br_4"
+                        style="@style/text_incard"
+                        android:layout_height="40dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/material_grey500"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"/>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
         </android.support.v7.widget.CardView>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/material_grey500"/>
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="8dp"
-            android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="match_parent"
-            android:text="Chennai"
-            style="@style/text_incard"
-            android:layout_height="wrap_content" />
-        </android.support.v7.widget.CardView>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/material_grey500"/>
-
-
-    </LinearLayout>
 
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.NavigationView
+        android:layout_width="240dp"
+        android:id="@+id/nav_drawer_main"
+        app:menu="@menu/activity_main_drawer"
+        android:layout_gravity ="start"
+
+        app:headerLayout="@layout/header_layout"
+        android:layout_height="match_parent">
+
+    </android.support.design.widget.NavigationView>
+    </android.support.v4.widget.DrawerLayout>

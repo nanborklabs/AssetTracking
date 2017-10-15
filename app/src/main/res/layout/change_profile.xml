@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_marginBottom="20dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:background="@drawable/login_background_gradient"
+
             android:layout_height="match_parent">
 
             <android.support.v7.widget.AppCompatImageView
@@ -33,10 +33,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/chn_profile_image"
-                app:srcCompat="@drawable/ic_users"
+                app:srcCompat="@drawable/ic_user"
                 android:layout_height="100dp" />
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
+           <com.versalite.assettracking.WhitenyBooksFont
                 android:text="112214"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,8 +57,8 @@
                 android:layout_below="@+id/personal_info_text"
                 android:background="@color/material_pink900"/>
 
-            <com.elf.elfstudent.CustomUI.QucikSand
-                android:text="Persona Info"
+            <com.versalite.assettracking.OpenSansTextView
+                android:text="Personal Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/personal_info_text"
@@ -70,7 +70,7 @@
                 android:layout_alignStart="@+id/elf_id" />
 
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
+           <com.versalite.assettracking.WhitenyBooksFont
                 android:text="Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
                 android:layout_marginTop="16dp"
                 android:id="@+id/full_name_text" />
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
+           <com.versalite.assettracking.WhitenyBooksFont
                 android:text="My Name is"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,41 +92,23 @@
                 android:layout_marginTop="4dp"
                 android:id="@+id/change_profile_name_value" />
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
-                android:text="Standard"
+
+
+
+
+           <com.versalite.assettracking.WhitenyBooksFont
+                android:text="Organisation Name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 style="@style/change_profile_top_text"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/change_profile_name_value"
                 android:layout_alignLeft="@+id/change_profile_name_value"
                 android:layout_alignStart="@+id/change_profile_name_value"
                 android:layout_marginTop="16dp"
-                android:id="@+id/chn_profile_standard" />
-
-            <com.elf.elfstudent.CustomUI.HelviticaLight
-                android:text="10th Standard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                style="@style/change_profile_bottom_text"
-                android:id="@+id/chg_profile_std_value"
-                android:layout_below="@+id/chn_profile_standard"
-                android:layout_alignLeft="@+id/chn_profile_standard"
-                android:layout_alignStart="@+id/chn_profile_standard" />
-
-            <com.elf.elfstudent.CustomUI.HelviticaLight
-                android:text="School Name"
-                android:layout_width="wrap_content"
-                style="@style/change_profile_top_text"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chg_profile_std_value"
-                android:layout_alignLeft="@+id/chg_profile_std_value"
-                android:layout_alignStart="@+id/chg_profile_std_value"
-                android:layout_marginTop="16dp"
                 android:id="@+id/chg_profile_school_name" />
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
-                android:text="Sri Akilandeswari Vidhyalaya"
+           <com.versalite.assettracking.WhitenyBooksFont
+                android:text="Versalite Tech"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/change_profile_bottom_text"
@@ -136,7 +118,7 @@
                 android:layout_marginTop="4dp"
                 android:id="@+id/chg_profile_school_value" />
 
-            <com.elf.elfstudent.CustomUI.QucikSand
+            <com.versalite.assettracking.OpenSansTextView
                 android:text="Contact Details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -159,7 +141,7 @@
                 android:layout_below="@id/chg_profile_contact"
                 android:background="@color/material_pink900"/>
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
+           <com.versalite.assettracking.WhitenyBooksFont
                 android:text="Email"
                 style="@style/change_profile_top_text"
                 android:layout_width="wrap_content"
@@ -170,7 +152,7 @@
                 android:layout_marginTop="16dp"
                 android:id="@+id/textView12" />
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
+           <com.versalite.assettracking.WhitenyBooksFont
                 android:text="nandhu11@gmail.com"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -181,7 +163,7 @@
                 android:layout_marginTop="4dp"
                 android:id="@+id/chg_profile_email_value" />
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
+           <com.versalite.assettracking.WhitenyBooksFont
                 android:text="9688612122"
                 style="@style/change_profile_bottom_text"
                 android:layout_width="wrap_content"
@@ -192,8 +174,8 @@
                 android:layout_marginTop="4dp"
                 android:id="@+id/chg_profile_phone_value" />
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
-                android:text="Elf ID"
+           <com.versalite.assettracking.WhitenyBooksFont
+                android:text="Employee Id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
@@ -205,13 +187,13 @@
                 android:layout_alignLeft="@+id/elf_id_view"
                 android:layout_alignStart="@+id/elf_id_view" />
 
-            <com.elf.elfstudent.CustomUI.HelviticaLight
+           <com.versalite.assettracking.WhitenyBooksFont
                 android:text="Phone Number"
                 android:layout_width="wrap_content"
                 style="@style/change_profile_top_text"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="20dp"
+
 
                 android:id="@+id/textView14"
                 android:layout_below="@+id/chg_profile_email_value"

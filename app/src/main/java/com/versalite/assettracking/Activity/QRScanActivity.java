@@ -4,10 +4,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.zxing.ResultPoint;
 import com.google.zxing.client.android.BeepManager;
@@ -67,6 +71,28 @@ public class QRScanActivity extends AppCompatActivity {
         barcodeView.decodeContinuous(callback);
 
         beepManager = new BeepManager(this);
+        Toolbar mToolbar  = (Toolbar) findViewById(R.id.cam_toolbar);
+        setSupportActionBar(mToolbar);
+        setSupportActionBar(mToolbar);
+        mToolbar.setTitle("");
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        try {
+            ActionBar ab = getSupportActionBar();
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+//            along with
+
+            getSupportActionBar().setIcon(R.drawable.ic_clear_black_24dp);
+        }
+        catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Error Occured",Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -100,41 +126,16 @@ public class QRScanActivity extends AppCompatActivity {
         return barcodeView.onKeyDown(keyCode, event) || super.onKeyDown(keyCode, event);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    @Override
+    //    @Override
 //    protected void onCreate(@Nullable Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
 //        setContentView(R.layout.scan_act);

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">@color/material_blue400</color>
-    <color name="colorPrimaryDark">@color/material_blue400</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimaryDark">@color/material_blue900</color>
+    <color name="colorAccent">#ffff</color>
     <color name="md_red50">#ffffebee</color>
     <color name="md_red100">#ffffcdd2</color>
     <color name="md_red200">#ffef9a9a</color>
@@ -554,4 +554,5 @@
 
     <color name="material_black">#ff000000</color>
     <color name="material_white">#ffffffff</color>
+    <color name="black">#36353F</color>
 </resources>
