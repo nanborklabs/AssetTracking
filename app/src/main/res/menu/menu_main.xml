@@ -1,0 +1,39 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.replay.MainActivity">
+    <item
+        android:id="@+id/books"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_class_black_24dp"
+        android:title="Books"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/games"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_motorcycle_black_24dp"
+        android:title="Games"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/consoles"
+        android:icon="@drawable/ic_chevron_right_black_24dp"
+        android:orderInCategory="100"
+        android:title="Consoles"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/gadgets"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_whatshot_black_24dp"
+        android:title="Gadgets"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/t_kits"
+        android:icon="@drawable/ic_terrain_black_24dp"
+        android:orderInCategory="100"
+        android:title="Travel Kits"
+        app:showAsAction="never" />
+
+
+
+</menu>
